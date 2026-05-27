@@ -1,23 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Carlos Valencia Durán — Periodista & Director de Medios Digitales",
-  description: "Portafolio de Carlos Valencia Durán. Periodista, fundador de Acontecer.co.cr, consultor en comunicación estratégica y media tech.",
+  description:
+    "Portafolio de Carlos Valencia Durán. Periodista, fundador de Acontecer.co.cr, consultor en comunicación estratégica y media tech.",
   openGraph: {
     title: "Carlos Valencia Durán — Periodista & Director de Medios Digitales",
-    description: "Portafolio profesional. Premio Alberto Martén Chavarría 2023. Fundador de Acontecer.co.cr.",
+    description:
+      "Portafolio profesional. Premio Alberto Martén Chavarría 2023. Fundador de Acontecer.co.cr.",
     locale: "es_CR",
     type: "website",
   },
@@ -25,15 +16,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="es">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&family=DM+Serif+Display:ital@0;1&family=Big+Shoulders+Display:opsz,wght@10..72,100..900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
